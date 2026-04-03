@@ -5,7 +5,7 @@ axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
 
 export const addTodo = async (data) => {
     try {
-        const response = await axios.post('/api/todo/add', data);   
+        const response = await axios.post('/api/v1/todo/create', data);   
         return response.data;
     } catch (error) {
         console.error('Error adding todo:', error);
@@ -15,7 +15,7 @@ export const addTodo = async (data) => {
 
 export const getTodos = async (userId) => {
     try {
-        const response = await axios.get(`/api/todo/getAll/${userId}`);
+        const response = await axios.get(`/api/v1/todo/getAll/${userId}`);
         return response.data.todos;
     } catch (error) {
         console.error('Error fetching todos:', error);
@@ -25,7 +25,7 @@ export const getTodos = async (userId) => {
 
 export const deleteTodo = async (id) => {
     try {
-        const response = await axios.post(`/api/todo/delete/${id}`);
+        const response = await axios.post(`/api/v1/todo/delete/${id}`);
         return response.data;
     }
     catch (error) {
@@ -36,7 +36,7 @@ export const deleteTodo = async (id) => {
 
 export const updateTodo = async (id, data) => {
     try {
-        const response = await axios.patch(`/api/todo/update/${id}`, data);
+        const response = await axios.patch(`/api/v1/todo/update/${id}`, data);
         return response.data;
     }
     catch (error) {
@@ -45,3 +45,10 @@ export const updateTodo = async (id, data) => {
     }
 };
 
+const TodoService = {
+    createTodo: addTodo,
+    getTodos: getTodos,
+    deleteTodo: deleteTodo,
+    updateTodo: updateTodo
+};
+export default TodoService;

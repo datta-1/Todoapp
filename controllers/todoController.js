@@ -1,6 +1,6 @@
 const Todo=require('../models/todomodel')
 //CREATE TODO
-const todocontrol=async(req,res)=>{
+const createTodo=async(req,res)=>{
     try {
         const {title,description,user}=req.body; 
         console.log("USER:", req.user);
@@ -64,4 +64,4 @@ const updateTodo=async(req,res)=>{
 }
 
 
-module.exports={todocontrol,getTodo,deleteTodo,updateTodo}                
+module.exports={createTodo,getTodo,deleteTodo,updateTodo}                

@@ -1,0 +1,18 @@
+.add-task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.add-task h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.add-task input[type="search"] {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+}
