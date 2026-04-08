@@ -2,7 +2,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import TodoService from '../../services/TodoService';
 
-const PopModel = ({title,setTitle,description,setDescription,showModal,setShowModal}) => {
+const PopModel = ({title,setTitle,description,setDescription,showModal,setShowModal,getUserTask}) => {
     const handleClose = () => {
         setShowModal(false);
     }
@@ -20,8 +20,7 @@ const handleSave = async() => {
         setShowModal(false);
         setTitle('');
         setDescription('');
-
-
+        getUserTask();
     }
     catch (error) {
         console.error('Error saving task:', error);
